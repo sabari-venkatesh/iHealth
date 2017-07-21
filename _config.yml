@@ -2,8 +2,8 @@
 # Can be used in your theme by calling 'site.title' and so on
 title: single-page-site
 description: 
-url: https://sabarigr.github.io/
-baseurl: /gulpify-jekyll
+url: http://localhost
+baseurl: ""
 
 # Used so Jekyll outputs the site correctly so Gulp can do what it wants
 source: .tmp/src
