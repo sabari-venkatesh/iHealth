@@ -3,6 +3,7 @@
 title: single-page-site
 description: 
 url: https://sabarigr.github.io/
+baseurl: /gulpify-jekyll
 
 # Used so Jekyll outputs the site correctly so Gulp can do what it wants
 source: .tmp/src
