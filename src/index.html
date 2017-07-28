@@ -1,21 +1,76 @@
 ---
 layout: default
+title: Home
+categories: iHealth home
+group: "navigation"
+weight: 1
 ---
 
-<div class="home">
+<section class="container ui-section">
+  <div class="columns is-centered">
+    <div class="column">
+      <img src="http://lorempixel.com/g/680/480/business" alt="">
+    </div>
+    <div class="column">
+      <h1 class="h2">iHealth</h1>
+      <p>This application consumes physical activity data, such as human heart rate, temperature, orientation or cceleration, in real time on a patient. It then streams and evaluates this data to produce statistics, detect what type of physical activity a patient is doing, and then detect or predict anomalies in a patient’s heart rate.</p>
+      <a href="#" class="ui-link">Watch an overview</a>
+    </div>
+  </div>
+</section>
 
-  <h1 class="page-heading">Posts</h1>
 
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+<section class="container ui-section">
+  <div class="columns is-centered">
+    <div class="column is-8 block--partners">
+      <div class="columns">
+        <div class="column">
+          <h2 class="h4">About OFS</h2>
+          <p>With a deep heritage of building commercial products for software vendors, OFS has the insight and experience to create impactful software for any business. We started out as a software product company 20 years ago, and we continue to help software vendors and software-enabled businesses build commercial-grade, market-leading innovations. </p>
+        </div>
+        <div class="column">
+          <h3 class="h4">Heroku</h3>
+          <p>OFS is proud to be a certified Heroku/Salesforce partner, which empowers us to deliver exceptional applications that drive companies forward on their digital transformation journeys.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-</div>
+
+
+
+<section class="container ui-section">
+  <div class="columns is-centered text--center">
+    <div class="column is-8">
+      <h2>As a company, what can we bring to the table?</h2>
+      <p>Our sharp focus on digital transformation and data analytics helps companies gain greater insights into what their customers need, then deliver new products and services their customers love.
+      </p>   
+    </div>
+  </div>
+  <div class="columns">
+    <div class="column is-8">
+      <h3 class="h4">OFS can bring you these benefits with our engineering capabilities:</h3>
+      <ul class="list">
+        <li>Optimal resourcing</li>
+        <li>Elastic, scalable solutions</li>
+        <li>Applications that your customers can connect with anytime, anywhere</li>
+        <li>Real-time data analytics solutions that provide insights you can use to make decisions on how to meet your customers’ needs now and predict what their needs will be in the future</li>
+      </ul>    
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<section class="container is-fluid ui-section" style="background: url('http://lorempixel.com/g/1920/480/business/2') no-repeat 0 0; background-size: cover;">
+  <div class="columns is-centered text--center">
+    <div class="column is-8">
+      <h2>What can we achieve together?</h2>
+      <p>Our remote patient activity monitoring, prediction and anomaly detection application, iHealth, uses open source technologies and libraries, and hosts them on the Heroku Shield environment to meet the security aspects of HIPAA compliance.
+      </p>   
+    </div>
+  </div>
+</section>

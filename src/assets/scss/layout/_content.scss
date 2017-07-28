@@ -1,0 +1,23 @@
+.ui-section {
+  @include space(1);
+  
+  &.is-fluid {
+    > .is-centered {
+      @include space(1, padding-top);
+      @include space(1, padding-bottom);
+      
+      @include tablet {
+        @include space(15, min-height);
+      }
+    }
+  }
+}
+
+[class*="block-"] {
+  @include space(0.5, padding-top);
+  @include space(0.5, padding-bottom);
+}
+
+.block--partners {
+  background: #fff;
+}

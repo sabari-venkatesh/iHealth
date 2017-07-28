@@ -1,0 +1,88 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+
+
+
+
+
+/// Regular font family
+/// @type List
+$text-font-stack: 'Roboto', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif !default;
+
+/// Code (monospace) font family
+/// @type List
+$code-font-stack: 'Courier New', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Monaco', monospace !default;
+
+/// Webfont default formats
+/// @type {List}
+$font-formats: ("eot", "woff2", "woff", "ttf", "svg") !default;
+
+
+
+/// Copy text color
+/// @type Color
+$text-color: hsl(195, 7%, 24%) !default;
+$bg-color: #f0f0f0 !default;
+
+/// Main brand color
+/// @type Color
+$brand-color: hsl(4, 86%, 54%) !default;
+
+/// Light grey
+/// @type Color
+$light-grey: lighten($text-color, 45%) !default;
+
+/// Medium grey
+/// @type Color
+$mid-grey: lighten($text-color, 30%) !default;
+
+/// Dark grey
+/// @type Color
+$dark-grey: lighten($text-color, 15%) !default;
+
+
+
+
+
+
+
+$base-font-size: 12px;
+$rhythm: 1.5;
+$base-line-height: $rhythm * $base-font-size;
+$type-ratio: 1.333; /* perfect fourth - 3:4 */
+$show-baseline: false !default;
+
+
+
+
+// Set the number of columns you want to use on your layout.
+$grid-columns: 12 !default;
+// Set the gutter between columns.
+$grid-gutter: $type-ratio * 1rem !default;
+// Create or remove breakpoints for your project
+// Syntax:
+// name SIZErem,
+$tablet-width: 768px !default; // 64*12
+$desktop-width: 1008px !default; // 84*12
+$widescreen-width: 1248px !default; // 104*12
+$fullhd-width: 1488px !default; // 124*12
+
+// Container's maximum width
+$max-width: 1200px !default;
+//
+// -- Stop editing -- //
+//
+$gutter-compensation: $grid-gutter * -1;
+$half-gutter-width: $grid-gutter;
+
+
+
+/// Relative or absolute URL where all assets are served from
+/// @type String
+/// @example scss - When using a CDN
+///   $base-url: 'http://cdn.example.com/assets/';
+$base-url: '/static/' !default;
+
+
+

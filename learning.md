@@ -23,3 +23,28 @@ In `inject.js`, make `addPrefix` parameter to `baseurl`, so your url will now be
 
 Your original source is in the `master` branch and dist is in the `gh-pages` branch
 
+## to convert sass files to scss syntax
+
+sass-convert -R ./ -F sass -T scss && find . -type f -name '*.sass' -delete
+
+## jekyll-automatically-highlight-current-tab-in-menu-bar
+
+see `_includes/header.html`
+
+## menu structure is written using accessibility standards
+
+https://www.w3.org/WAI/tutorials/menus/structure/
+
+## sass contrast color function used (w3c accessibility recommendation)
+
+https://codepen.io/bluesaunders/pen/FCLaz
+
+## sass mixin for offsets 
+
+https://hugogiraudel.com/2013/08/05/offsets-sass-mixin/
+
+## gulp localhost cannot get /
+
+D:/tools/Ruby/lib/ruby/gems/2.3.0/gems/bundler-1.15.1/lib/bundler/runtime.rb:317:in `check_for_activated_spec!': You have already activated sass-listen 4.0.0, but your Gemfile requires sass-listen 3.0.7. Prepending `bundle exec` to your command may solve this. (Gem::LoadError)
+
+Probably a newer version of a gem is installed than expected. running `bundle exec gulp` solved this problem. 

@@ -1,0 +1,29 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the form of the site/application.
+// -----------------------------------------------------------------------------
+.form-wrap {
+  background: #ececec;
+}
+
+.form {
+  .label {
+    display: block;
+  }
+  .btn {
+    display: block;
+    width: 100%;
+  }
+}
+
+.form-group {
+  &.is-required {
+    .label {
+      position: relative;
+      &:after {
+        content: "*";
+        color: #650904;
+        font-size: 100%;
+      }
+    }
+  }
+}

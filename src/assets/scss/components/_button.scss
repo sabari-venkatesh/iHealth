@@ -1,0 +1,68 @@
+$button-bgcolor: $brand-color;
+$button-color: color-contrast($button-bgcolor);
+.btn {
+  display: inline-block;
+  cursor: pointer;
+  border: 1px solid shade($button-bgcolor, 15);
+  @include space(0.25, padding-top);
+  @include space(0.25, padding-bottom);
+  @include space(0.5, padding-right);
+  @include space(0.5, padding-left);
+  @include space(1.5, height);
+  @include space(0.5);
+  @include font-size(0);
+  background: #a5241c;
+  color: shade($button-color, 5);
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  will-change: transform, opacity;
+  &:hover {
+    text-decoration: none;
+    color: $button-color;
+  }
+  &:focus {
+    outline: 0;
+    border-color: tint($button-bgcolor, 15);
+    color: $button-color;
+    text-decoration: none;
+  }
+  &:before {
+    content: '';
+    z-index: -1;
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    margin: -15px 0 0 1px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: shade($button-bgcolor, 45);
+    transform-origin: 100% 50%;
+    transform: scale3d(1, 2, 1);
+    transition: transform 0.3s, opacity 0.3s;
+    transition-timing-function: cubic-bezier(0.7, 0, 0.9, 1);
+  }
+  &:hover {
+    &::before {
+      transform: scale3d(15, 15, 1);
+    }
+  }
+}
+
+.ui-link {
+  @include space(0.5, padding-top);
+  @include space(0.5, padding-bottom);
+  @include space(0.5, padding-right);
+  @include space(1.5, padding-left);
+  background-color: $button-bgcolor;
+  color: $button-color;
+  &:focus,
+  &:hover {
+    text-decoration: none;
+    color: $button-color;
+    background-color: shade($button-bgcolor, 15%);
+  }
+}

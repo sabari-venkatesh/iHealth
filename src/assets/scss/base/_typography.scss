@@ -1,0 +1,141 @@
+/**
+ * Basic typography style for copy text
+ */
+
+html {
+  -webkit-font-smoothing: antialiased;
+  font-size: $base-font-size;
+  @include tablet {
+    font-size: 14px;
+  }
+  @include widescreen {
+    font-size: 16px;
+  }
+  @include fullhd {
+    font-size: 18px;
+  }
+}
+
+body {
+  font-size: 100%;
+  @if $show-baseline==true {
+    background-image: linear-gradient(to top, #ddd 5%, rgba(white, 0) 5%);
+    background-size: 100% 1.5rem;
+    background-repeat: repeat;
+    /*background-image: url(http://basehold.it/i/#{$baseline-size});*/
+  }
+  line-height: $rhythm;
+  font-family: $text-font-stack;
+  color: $text-color;
+  background-color: $bg-color;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+p {
+  margin: 0;
+  font-weight: 400;
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+{
+  font-weight: 300;
+}
+
+h5,
+.h5,
+h6,
+.h6,
+strong,
+b {
+  font-weight: 700;
+}
+
+h1,
+.h1 {
+  @include font-size(4);
+  @include space(2);
+}
+
+h2,
+.h2 {
+  @include font-size(3);
+  @include space(1);
+}
+
+h3,
+.h3 {
+  @include font-size(2);
+  @include space(1);
+}
+
+h4,
+.h4 {
+  @include font-size(1);
+  @include space(1);
+}
+
+h5,
+.h5 {
+  @include font-size(0);
+}
+
+h6,
+.h6 {
+  @include font-size(-1);
+}
+
+p,
+ul,
+ol,
+pre,
+table,
+blockquote {
+  margin: 0;
+  @include font-size(0);
+  @include space(1);
+}
+
+hr,
+.hr {
+  border: 1px solid;
+  margin: -1px 0;
+}
+
+sub,
+sup {
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+em,
+i {
+  font-style: normal;
+  font-weight: 500;
+}

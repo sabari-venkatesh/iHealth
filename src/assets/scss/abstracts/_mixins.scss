@@ -1,0 +1,112 @@
+/// Make a context based selector a little more friendly
+/// @author Hugo Giraudel
+/// @param {String} $context
+@mixin when-inside($context) {
+  #{$context} & {
+    @content;
+  }
+}
+
+/// Constructs a valid @font-face declaration
+/// @param {String} $name - Reference to the Webfont. Use this in your CSS
+/// @param {String} $path - Path of the font-file (without extension)
+/// @param {Number} $weight [400] - Desired numeric font-weight
+/// @param {String} $style [normal] - Desired font-style
+/// @output Font-Face declarations for a given webfont
+@mixin font-face($name, $path, $weight: null, $style: null, $exts: $font-formats) {
+  $src: null;
+  $extmods: ( eot: "?", svg: "#" + str-replace($name, " ", "_"));
+  $formats: ( otf: "opentype", ttf: "truetype");
+  @each $ext in $exts {
+    $extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext);
+    $format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+    $src: append($src, url(quote($path + "." + $extmod)) format(quote($format)), comma);
+  }
+  @font-face {
+    font-family: quote($name);
+    font-style: $style;
+    font-weight: $weight;
+    src: $src;
+  }
+}
+
+@mixin font-size($scale) {
+  $font-size: round($base-font-size * power($type-ratio, $scale));
+  font-size: if($font-size < $base-font-size, $base-font-size, $font-size);
+  font-size: if($font-size < $base-font-size, $base-font-size, $font-size) / $base-font-size + rem;
+  line-height: ceil($font-size / $base-line-height) * $base-line-height;
+  line-height: ceil($font-size / $base-line-height) * $base-line-height / $base-font-size + rem;
+}
+
+@mixin clearfix() {
+  &:after {
+    clear: both;
+    content: "";
+    display: table;
+  }
+}
+
+@mixin space($offset: 2,
+$property: margin-bottom) {
+  #{$property}: $offset * $base-line-height;
+  #{$property}: $offset * $rhythm + rem;
+}
+
+@mixin spacer($property: margin-bottom) {
+  #{$property}: $offset * $base-line-height;
+  #{$property}: $offset * $rhythm + rem;
+}
+
+@mixin mobile {
+  @media (max-width: #{$tablet-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$tablet-width}), print {
+    @content;
+  }
+}
+
+@mixin tablet-only {
+  @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin touch {
+  @media (max-width: #{$desktop-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
+
+@mixin desktop-only {
+  @media (min-width: #{$desktop-width}) and (max-width: $widescreen-width - 1px) {
+    @content;
+  }
+}
+
+@mixin widescreen {
+  @media (min-width: #{$widescreen-width}) {
+    @content;
+  }
+}
+
+@mixin widescreen-only {
+  @media (min-width: #{$widescreen-width}) and (max-width: $fullhd-width - 1px) {
+    @content;
+  }
+}
+
+@mixin fullhd {
+  @media (min-width: #{$fullhd-width}) {
+    @content;
+  }
+}

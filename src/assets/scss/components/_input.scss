@@ -1,0 +1,25 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the input component.
+// -----------------------------------------------------------------------------
+$input-height: $type-ratio * $base-line-height;
+.input {
+  width: 100%;
+  background: #fff;
+  border: 1px solid #ccc;
+  color: #222;
+  display: block;
+  @include space(1.25, height);
+  @include space(0.75);
+  padding: 0.5em;
+  @include font-size(0);
+  outline: none;
+  transition: box-shadow 0.2s ease-out;
+  @at-root {
+    textarea.input {
+      @include space(3.25, height);
+    }
+  }
+  &:focus {
+    box-shadow: 0 0 10px #bbb;
+  }
+}

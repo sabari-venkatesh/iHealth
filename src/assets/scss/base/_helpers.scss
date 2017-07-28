@@ -1,0 +1,98 @@
+// -----------------------------------------------------------------------------
+// This file contains CSS helper classes.
+// -----------------------------------------------------------------------------
+
+/**
+ * Clear inner floats
+ */
+
+.clearfix::after {
+  clear: both;
+  content: '';
+  display: table;
+}
+
+
+/*
+ * Hide visually and from screen readers
+ */
+
+.hidden {
+  display: none !important;
+}
+
+
+/**
+ * 1. Hide element while making it readable for screen readers
+ * Shamelessly borrowed from HTML5Boilerplate:
+ * https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css#L119-L133
+ * 2. Extends the .visuallyhidden class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+
+.visually-hidden {
+  /*1*/
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  /*2*/
+  &.focusable {
+    &:active,
+    &:focus {
+      clip: auto;
+      height: auto;
+      margin: 0;
+      overflow: visible;
+      position: static;
+      width: auto;
+    }
+  }
+}
+
+.br {
+  border-right: 2px solid #218bb2;
+}
+
+.emphasis {
+  color: #218bb2;
+}
+
+.text--center {
+  text-align: center;
+}
+
+.align--left {
+  float: left;
+  @at-root img#{&} {
+    margin-right: 0.5em;
+  }
+}
+
+.align--right {
+  float: right;
+  @at-root img#{&} {
+    margin-left: 0.5em;
+  }
+}
+
+
+/* color classes */
+
+.bg--geyser {
+  background-color: #dce2e5;
+}
+
+.bg--ocean-green {
+  background-color: #42b879;
+}
+
+.bg--ebony {
+  background-color: #222;
+  color: #fff;
+}

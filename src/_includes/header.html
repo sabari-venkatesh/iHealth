@@ -1,6 +1,38 @@
-<header class="site-header">
+<a href="#main" class="visually-hidden focusable" tabindex="1">Skip to main content</a>
+<nav class="navbar" role="navigation">
+  <div class="container">
+    <div class="navbar__brand">
+      <a href="{{ site.baseurl | prepend:site.url }}">{{ site.title }}</a>  
+    </div>
+    <div class="navbar__menu" aria-labelledby="mainmenulabel">
+      <div class="navbar__toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <h2 id="mainmenulabel" class="visually-hidden">Main Menu</h2>
+      {% assign pages_list = site.pages | sort:"weight" %}
+      {% assign group = 'navigation' %}
 
-  <div class="wrapper">
+      {% for node in pages_list %}
+        {% if group == null or group == node.group %}
+          {% if page.url == node.url %}
+            <a href="{{node.url | prepend:site.baseurl}}" class="nav__item is-active" aria-current="page">{{node.title}}</a>
+          {% else %}
+            <a href="{{node.url | prepend:site.baseurl}}" class="nav__item">{{node.title}}</a>
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+
+      {% assign pages_list = nil %}
+      {% assign group = nil %}
+
+    </div>
+  </div>
+</nav>
+
+
+  <!--<div class="wrapper">
 
     <a class="site-title" href="{{ site.baseurl }}/">{{ site.title }}</a>
 
@@ -22,6 +54,4 @@
       </div>
     </nav>
 
-  </div>
-
-</header>
+  </div>-->

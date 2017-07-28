@@ -1,0 +1,13 @@
+.alert {
+  @include space(1);
+  padding: 0.5em;
+  color: #fff;
+}
+
+.alert--success {
+  background-color: #1CA552;
+}
+
+.alert--error {
+  background-color: #F13529;
+}

@@ -1,0 +1,40 @@
+$navbar_height: 3;
+$nav_item-color: $text-color;
+$nav_item-activecolor: #ef3024;
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  &>.container {
+    @include space($navbar_height, min-height);
+    @include tablet {
+      display: flex;
+      align-items: center;
+    }
+  }
+  
+  & + [role="main"] {
+    @include space($navbar_height, padding-top);
+  }
+}
+
+.navbar__menu {
+  @include tablet {
+    justify-content: flex-end;
+    margin-left: auto;
+  }
+}
+
+.nav__item {
+  color: $nav_item-color;
+  display: inline-block;
+  padding: 0.25em;
+  margin: 0 0.5em;
+  &:hover,
+  &.is-active {
+    text-decoration: none;
+    color: $nav_item-activecolor;
+    border-bottom: 0.15em solid;
+  }
+}

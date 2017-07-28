@@ -1,0 +1,65 @@
+// -----------------------------------------------------------------------------
+// This file contains very basic styles.
+// -----------------------------------------------------------------------------
+
+/**
+ * Set up a decent box model on the root element
+ */
+
+html {
+  box-sizing: border-box;
+}
+
+
+/**
+ * Make all elements from the DOM inherit from the parent box-sizing
+ * Since `*` has a specificity of 0, it does not override the `html` value
+ * making all elements inheriting from the root box-sizing value
+ * See: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+ */
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+
+/**
+ * Basic styles for links
+ */
+
+$link-focus: darken($brand-color, 30%);
+$link-active: darken($brand-color, 45%);
+a {
+  color: $brand-color;
+  text-decoration: none;
+  &:focus {
+    outline: 1px dotted $link-focus;
+    color: $link-focus;
+  }
+  &:hover {
+    color: darken($brand-color, 30%);
+    text-decoration: underline;
+  }
+  &:active {
+    background-color: color-contrast($link-active);
+    color: $link-active;
+  }
+  @media print {
+    &:after {
+      content: " (" attr(href) ") ";
+      font-weight: normal;
+    }
+  }
+}
+
+audio,
+embed,
+iframe,
+img,
+object,
+video {
+  max-width: 100%;
+  height: auto;
+}
